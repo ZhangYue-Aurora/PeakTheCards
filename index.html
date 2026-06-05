@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Peak the Cards!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <div id="loading-screen">
+  <h2>Loading Game...</h2>
+  <div class="loading-spinner"></div>
+</div>
+
+<!-- Title Screen -->
+<div id="title-screen">
+  <img src="images/title.png" alt="Peak the Cards!" id="title-image" />
+  <div class="title-buttons">
+    <button id="start-btn">Start</button>
+  </div>
+</div>
+
+<!-- Nickname Screen -->
+<div id="nickname-screen" style="display:none;">
+  <h2>Enter Your Nickname</h2>
+  <input id="nickname-input" type="text" maxlength="20" placeholder="Your nickname" style="font-size:16px; padding:8px;">
+  <br><br>
+  <div class="nickname-buttons">
+    <button id="nickname-submit-btn">Continue</button>
+    <button id="nickname-to-title-btn">Back</button>
+  </div>
+</div>
+
+<div id="tutorial-screen" style="display:none;">
+  <h2>How To Play</h2>
+
+  <div class="tutorial-content">
+    <img id="tutorial-image" src="" alt="Tutorial Step">
+  </div>
+
+  <div class="tutorial-nav">
+    <button id="tutorial-prev">⬅</button>
+    <span id="tutorial-page-indicator"></span>
+    <button id="tutorial-next">➡</button>
+  </div>
+
+  <button id="tutorial-skip-btn">Finished</button>
+</div>
+
+<!-- Mode Selection Screen -->
+<div id="mode-screen" style="display:none;">
+  <img src="images/title.png" alt="Peak the Cards!" id="mode-image" />
+  <div class="mode-buttons">
+    <button id="tutorial-btn">Tutorial</button>
+    <button id="easy-btn">Easy</button>
+    <button id="normal-btn">Normal</button>
+    <button id="hard-btn">Hard</button>
+    <button id="expert-btn">Expert</button>
+    <button id="leaderboard-btn">Leaderboard</button>
+    <button id="back-to-title-btn">Back To Title</button>
+  </div>
+</div>
+
+<!-- Main Game Screen -->
+<div id="game-screen" style="display:none;">
+  <div class="game-layout">
+
+    <!-- LEFT SIDE: suspects + attempts + clues -->
+    <div class="left-panel">
+      <div id="suspects-grid"></div>
+
+      <div id="attempts-wrapper">
+        <div id="attempts"></div>
+      </div>
+
+      <div id="clues-wrapper">
+        <div id="clues"></div>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE: timer + score + questions -->
+    <div class="right-panel">
+      <div class="top-info">
+        <div id="timer"></div>
+        <div id="score"></div>
+      </div>
+      <div id="questions"></div>
+    </div>
+  </div>
+
+  <!-- Bottom buttons (can be repositioned later) -->
+  <div class="bottom-controls">
+    <button id="replay-btn">Replay Game</button>
+    <button id="back-to-mode-btn">Back</button>
+  </div>
+</div>
+
+<!-- Leaderboard Screen -->
+<div id="leaderboard-screen" style="display:none;">
+  <h2>✨Top 10 Players✨</h2>
+
+  <div class="leaderboard-nav">
+    <button id="leaderboard-prev">⬅</button>
+    <span id="leaderboard-difficulty-label"></span>
+    <button id="leaderboard-next">➡</button>
+  </div>
+
+  <div id="leaderboard"></div>
+
+  <button id="back-to-mode-btn2">Back</button>
+</div>
+
+<!-- End Screen -->
+<div id="end-screen" style="display:none;">
+  <h2>Round Finished</h2>
+  <div class="end-result-box">
+    <div id="end-stars"></div>
+    <div id="end-summary"></div>
+  </div>
+  <h3>Correct Answer:</h3>
+  <div id="correct-suspect-box" class="correct-suspect-box">
+    <img id="correct-normal-img" />
+    <img id="correct-caught-img" />
+  </div>
+  <div class="end-buttons">
+    <button id="end-replay-btn">Play Again</button>
+    <button id="end-leaderboard-btn">Leaderboard</button>
+    <button id="end-mode-btn">Mode Selection</button>
+  </div>
+</div>
+<script src="./script.js"></script>
+
+<div id="difficulty-popup" class="difficulty-popup" style="display:none;">
+  <div class="difficulty-popup-content">
+    <h3 id="popup-title"></h3>
+    <div id="popup-requirements"></div>
+
+    <div class="popup-buttons">
+      <button id="popup-start-btn">Start Game</button>
+      <button id="popup-cancel-btn">Cancel</button>
+    </div>
+  </div>
+</div>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>

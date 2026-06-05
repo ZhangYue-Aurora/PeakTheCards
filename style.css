@@ -1,0 +1,908 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+#loading-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 390px;
+  max-width: 800px;
+  min-height: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #c0e7ff; /* light blue like your sketch */
+  border-radius: 12px;
+  box-shadow: 0 0 10px #8bb6da;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+.loading-spinner {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #ddd;
+  border-top: 4px solid #2a6fb8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#loading-screen h2 {
+  margin-bottom: 32px;
+  font-size: 1.8em;
+  margin-top: 120px;
+  color: #2a6fb8;
+  text-align: center;
+}
+
+#title-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 390px;
+  max-width: 800px;
+  min-height: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #c0e7ff; /* light blue like your sketch */
+  border-radius: 12px;
+  box-shadow: 0 0 10px #8bb6da;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+.title-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.title-buttons button {
+  font-size: 16px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 2px solid #2a6fb8;
+  background: #ffffff;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+  margin: 10px 0;
+  width: 220px;
+  max-width: 90vw;
+  box-sizing: border-box;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.title-buttons button:hover {
+  background: #e0f1ff;
+  transform: translateY(-1px);
+}
+
+#title-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  margin-bottom: 36px; /* space below the image */
+  max-width: 90%;
+  height: auto;
+  filter: drop-shadow(0 4px 12px rgba(42, 111, 184, 0.18));
+}
+
+#nickname-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 390px;
+  max-width: 800px;
+  min-height: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #c0e7ff; /* light blue like your sketch */
+  border-radius: 12px;
+  box-shadow: 0 0 10px #8bb6da;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+.nickname-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.nickname-buttons button {
+  font-size: 16px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 2px solid #2a6fb8;
+  background: #ffffff;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+  margin: 10px 0;
+  width: 220px;
+  max-width: 90vw;
+  box-sizing: border-box;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.nickname-buttons button:hover {
+  background: #e0f1ff;
+  transform: translateY(-1px);
+}
+
+#nickname-input {
+  display: block;
+  margin: 0 auto 0px auto;
+  font-size: 1.1em;
+  padding: 10px 16px;
+  border-radius: 2px;
+  border: 2px solid #2a6fb8;
+  width: 240px;
+  max-width: 90vw;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+#nickname-screen h2 {
+  margin-bottom: 32px;
+  font-size: 1.8em;
+  margin-top: 120px;
+  color: #2a6fb8;
+  text-align: center;
+}
+
+#mode-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 390px;
+  max-width: 800px;
+  min-height: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #c0e7ff; /* light blue like your sketch */
+  border-radius: 12px;
+  box-shadow: 0 0 10px #8bb6da;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+.mode-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.mode-buttons button {
+  font-size: 16px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 2px solid #2a6fb8;
+  background: #ffffff;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+  margin: 10px 0;
+  width: 220px;
+  max-width: 90vw;
+  box-sizing: border-box;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.mode-buttons button:hover {
+  background: #e0f1ff;
+  transform: translateY(-1px);
+}
+#easy-btn {
+  background: #a0dec9;
+  border-color: #66aaa9;
+}
+#easy-btn:hover {
+  background: #66aaa9;
+}
+
+#normal-btn {
+  background: #8cbfe5;
+  border-color: #6f9ace;
+}
+#normal-btn:hover {
+  background: #6f9ace;
+}
+
+#hard-btn {
+  background: #b2bfe5;
+  border-color: #939ace;
+}
+#hard-btn:hover {
+  background: #939ace;
+}
+
+#expert-btn {
+  background: #d7a0cf;
+  border-color: #b96dae;
+}
+#expert-btn:hover {
+  background: #b96dae;
+}
+
+
+
+#mode-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 36px; /* space below the image */
+  max-width: 70%;
+  height: auto;
+  filter: drop-shadow(0 4px 12px rgba(42, 111, 184, 0.18));
+}
+
+#leaderboard-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 390px;
+  max-width: 800px;
+  min-height: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #c0e7ff; /* light blue like your sketch */
+  border-radius: 12px;
+  box-shadow: 0 0 10px #8bb6da;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+#leaderboard-screen h2 {
+  text-align: center;
+  color: #2a6fb8;
+  font-size: 2em;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+
+#leaderboard {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 18px rgba(42, 111, 184, 0.13);
+  padding: 28px 36px;
+  min-width: 280px;
+  max-width: 500px;
+  margin-bottom: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#leaderboard ol {
+  padding-left: 0;
+  list-style-position: inside;
+  margin: 0;
+  width: 100%;
+}
+
+#leaderboard li {
+  font-size: 1.13em;
+  margin: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 7px;
+  text-align: left;
+  width: 100%;
+  word-break: break-word;
+}
+
+#leaderboard li:last-child {
+  border-bottom: none;
+}
+
+#back-to-mode-btn2 {
+  font-size: 16px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 2px solid #2a6fb8;
+  background: #ffffff;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+  font-weight: 500;
+  letter-spacing: 1px;
+  display: block;
+  margin: 0 auto;
+}
+
+#back-to-mode-btn2:hover {
+  background: #e0f1ff;
+  transform: translateY(-1px);
+}
+
+#end-screen,
+#tutorial-screen {
+  min-width: 390px;
+  max-width: 800px;
+  min-height: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #c0e7ff; /* light blue like your sketch */
+  border-radius: 12px;
+  box-shadow: 0 0 10px #8bb6da;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+.tutorial-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+#tutorial-image {
+  max-width: 90%;
+  max-height: 350px;
+  border-radius: 10px;
+}
+
+.tutorial-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.tutorial-nav button {
+  font-size: 1.2em;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 2px solid #2a6fb8;
+  background: #ffffff;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+  font-weight: 500;
+  letter-spacing: 1px;
+  min-width: 50px;
+}
+.tutorial-nav button:hover {
+  background: #e0f1ff;
+  transform: translateY(-1px);
+}
+
+#tutorial-skip-btn {
+  font-size: 16px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 2px solid #2a6fb8;
+  background: #ffffff;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+  font-weight: 500;
+  letter-spacing: 1px;
+  display: block;
+  margin: 0 auto;
+}
+
+#tutorial-skip-btn2:hover {
+  background: #e0f1ff;
+  transform: translateY(-1px);
+}
+
+#tutorial-screen h2 {
+  text-align: center;
+  color: #2a6fb8;
+  font-size: 2em;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+/* Overall game container */
+
+#game-screen {
+  min-width: 390px;
+  max-width: 1000px;
+  min-height: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #c0e7ff; /* light blue like your sketch */
+  border-radius: 12px;
+  box-shadow: 0 0 10px #8bb6da;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* Two-column main layout */
+.game-layout {
+  display: flex;
+  flex-direction: row; /* desktop default */
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Panels share width on desktop */
+.left-panel,
+.right-panel {
+  flex: 1;
+}
+
+/* 🔥 MOBILE BREAKPOINT */
+@media (max-width: 768px) {
+  .game-layout {
+    flex-direction: column; /* stack vertically */
+  }
+
+  .left-panel,
+  .right-panel {
+    width: 100%;
+  }
+}
+
+/* 2 rows × 4 columns suspect grid */
+#suspects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+/* wrapper */
+.suspect-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* card button */
+.suspect-card {
+  width: 100%;
+  max-width: 110px;
+  aspect-ratio: 11 / 14;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  perspective: 1200px;
+  padding: 0;
+  transition: transform 0.15s ease;
+}
+
+.suspect-card:hover:not(:disabled) {
+  transform: translateY(-3px);
+}
+
+/* smooth flip */
+.suspect-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  will-change: transform;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+/* FLIP */
+.suspect-card.flipped .suspect-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* faces */
+.suspect-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  border: 3px solid #2a6fb8;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.suspect-face img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+
+.suspect-front {
+  transform: rotateY(0deg);
+}
+
+.suspect-back {
+  transform: rotateY(180deg);
+}
+
+/* Disabled styling */
+.suspect-card:disabled {
+  cursor: default;
+}
+
+/* Checkbox */
+.suspect-checkbox {
+  transform: scale(1.2);
+}
+
+/* Disable checkbox visually */
+.suspect-checkbox:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Shake animation */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-6px);
+  }
+  40% {
+    transform: translateX(6px);
+  }
+  60% {
+    transform: translateX(-4px);
+  }
+  80% {
+    transform: translateX(4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.suspect-card.shake {
+  animation: shake 0.4s ease;
+}
+/* Attempts above clues */
+#attempts-wrapper {
+  font-size: 18px;
+  font-weight: 600;
+  color: #154d7f;
+}
+
+/* Clues area below suspects */
+#clues-wrapper {
+  background: #ffffff;
+  border-radius: 8px;
+  border: 2px solid #2a6fb8;
+  padding: 10px;
+  height: 165px;
+  overflow-y: auto;
+}
+
+#clues {
+  font-size: 16px;
+  background: #ffffff;
+}
+
+/* RIGHT PANEL: timer + score + questions */
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* timer + score row at top */
+.top-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #154d7f;
+}
+
+#timer {
+  padding: 6px 12px;
+  background: #ffffff;
+  border-radius: 6px;
+  border: 2px solid #2a6fb8;
+  font-family: "Courier New", monospace; /* timer feel */
+}
+
+#score {
+  font-size: 18px;
+}
+
+/* question list */
+#questions {
+  flex: 1;
+  max-height: 470px; /* let flex control */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.question-btn {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 10px 12px;
+  text-align: left;
+
+  background: #8ab1dc;
+  color: #183e70;
+  border-radius: 10px;
+  border: 3px solid #2a6fb8;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.question-btn:hover {
+  background: #67a2dd;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+/* your existing “state” classes can still be used */
+
+/* your existing “state” classes can still be used */
+.question-btn.greyed {
+  background: #bbb;
+  color: #444;
+  cursor: default;
+  box-shadow: none;
+}
+.question-btn.primary {
+  background: #b2bfe5;
+  border-color: #939ace;
+  font-weight: bold;
+}
+.question-btn.primary:hover {
+  background: #939ace;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+.question-btn.secondary {
+  background: #8cbfe5;
+  border-color: #6f9ace;
+  font-style: italic;
+}
+.question-btn.secondary:hover {
+  background: #6f9ace;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+.question-btn.tertiary {
+  background: #a0dec9;
+  border-color: #66aaa9;
+}
+.question-btn.tertiary:hover {
+  background: #66aaa9;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Bottom controls */
+.bottom-controls {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.bottom-controls button {
+  font-size: 16px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 2px solid #2a6fb8;
+  background: #ffffff;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.bottom-controls button:hover {
+  background: #e0f1ff;
+  transform: translateY(-1px);
+}
+
+/* Keep your checkboxes a bit larger if you still use them */
+.suspect-checkbox {
+  margin-right: 10px;
+  transform: scale(1.2);
+  vertical-align: middle;
+}
+
+#end-screen h2 {
+  text-align: center;
+  color: #2a6fb8;
+  font-size: 2em;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+#end-screen h3 {
+  text-align: center;
+  color: #2a6fb8;
+  font-size: 1.3em;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+
+.end-result-box {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 18px rgba(42, 111, 184, 0.13);
+  padding: 22px 30px 18px 30px;
+  margin-bottom: 18px;
+  margin-top: 36px;
+  min-width: 260px;
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+@keyframes starGlow {
+  0% {
+    text-shadow: 0 0 6px gold;
+  }
+  50% {
+    text-shadow: 0 0 14px gold;
+  }
+  100% {
+    text-shadow: 0 0 6px gold;
+  }
+}
+
+#end-stars {
+  display: block;
+  text-align: center;
+  font-size: 2.3em;
+  margin: 0 auto 0.6em auto;
+  width: 100%;
+  font-size: 2.3em;
+  color: gold;
+  margin-bottom: 0;
+  box-shadow: none;
+  animation: starGlow 1s infinite ease-in-out;
+  background: transparent;
+  padding-bottom: 0;
+}
+
+.end-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+.end-buttons button {
+  font-size: 14px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 2px solid #2a6fb8;
+  background: #ffffff;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+  font-weight: 500;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  max-width: 200px;
+}
+.end-buttons button:hover {
+  background: #e0f1ff;
+  transform: translateY(-1px);
+}
+
+.leaderboard-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.leaderboard-nav button {
+  font-size: 1.2em;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 2px solid #2a6fb8;
+  background: #ffffff;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+  font-weight: 500;
+  letter-spacing: 1px;
+  min-width: 50px;
+}
+.leaderboard-nav button:hover {
+  background: #e0f1ff;
+  transform: translateY(-1px);
+}
+
+.correct-suspect-box {
+  background: white;
+  padding: 20px;
+  max-width: 70%;
+  max-height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+#correct-normal-img {
+  max-width: 100px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+#correct-caught-img {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.difficulty-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+@keyframes popupScale {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.difficulty-popup-content {
+  animation: popupScale 0.2s ease;
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.popup-buttons {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.popup-buttons button {
+  font-size: 14px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 2px solid #2a6fb8;
+  background: #ffffff;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+  font-weight: 500;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  max-width: 200px;
+}
+.popup-buttons button:hover {
+  background: #e0f1ff;
+  transform: translateY(-1px);
+}
