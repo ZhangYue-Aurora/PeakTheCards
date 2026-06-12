@@ -136,7 +136,7 @@ document.getElementById("tutorial-btn").onclick = () => {
 };
 
 // On page load, show the title screen
-showScreen("title-screen");
+showScreen("loading-screen");
 
 // --- Game Data: Multi-Tier Questions ---
 const gameData = {
@@ -3711,6 +3711,7 @@ function startGame() {
 function showEndScreen(win) {
   // Calculate stars
   const settings = starRequirements[difficulty];
+  const storedNickname = localStorage.getItem("nickname");
 
   starsEarned = 0;
 
@@ -3732,12 +3733,11 @@ function showEndScreen(win) {
   // Summary
   document.getElementById("end-summary").innerHTML =
     (win
-      ? `<b>Yay! Congratulations ${playerNickname}, you found the correct answer!</b>`
-      : `<b>Sorry ${playerNickname}, you ran out of attempts :( </b>`) +
+      ? `<b>Yay! Congratulations ${storedNickname}, you found the correct answer!</b>`
+      : `<b>Sorry ${storedNickname}, you ran out of attempts :( </b>`) +
     `<br>Questions asked: <b>${questionsAsked}</b>` +
     `<br>Time taken: <b>${((Date.now() - startTime) / 1000).toFixed(1)}s</b>` +
-    `<br>Attempts left: <b>${attempts}</b>` +
-    `<br><b>Please don't forget to complete the post-game survey afterwards, thank you so much :3</b>`;
+    `<br>Attempts left: <b>${attempts}</b>`;
 
   // Show the end screen
   showScreen("end-screen");
