@@ -1,3 +1,5 @@
+let storedNickname = localStorage.getItem("nickname");
+
 // --- Screen Switching Utility ---
 function showScreen(screenId) {
   document.querySelectorAll(".screen").forEach((screen) => {
@@ -17,7 +19,6 @@ function showScreen(screenId) {
 // Show nickname/greeting screen after title
 document.getElementById("start-btn").onclick = function () {
   document.getElementById("title-screen").style.display = "none";
-  const storedNickname = localStorage.getItem("nickname");
   const nicknameScreen = document.getElementById("nickname-screen");
   const greetingDiv = document.getElementById("greeting-message");
   const greetingContinue = document.getElementById("greeting-continue-btn");
@@ -3381,7 +3382,7 @@ const starRequirements = {
 // for future expansion
 
 // --- Game State ---
-let playerNickname = "";
+
 let availableQuestions = [];
 let currentQuestions = [];
 let currentSuspects = [];
@@ -3711,7 +3712,6 @@ function startGame() {
 function showEndScreen(win) {
   // Calculate stars
   const settings = starRequirements[difficulty];
-  const storedNickname = localStorage.getItem("nickname");
 
   starsEarned = 0;
 
@@ -3752,7 +3752,7 @@ function sendGameData() {
   const maxAttempts = starRequirements[difficulty].attempts;
   const attemptsUsed = maxAttempts - attempts;
 
-  formData.append("nickname", playerNickname);
+  formData.append("nickname", storedNickname);
   formData.append("score", questionsAsked);
   formData.append("timetaken", ((Date.now() - startTime) / 1000).toFixed(1));
   formData.append("question_sequence", questionSequence.join(" | "));
