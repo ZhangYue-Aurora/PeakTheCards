@@ -19,11 +19,7 @@ function showScreen(screenId) {
 // Show nickname/greeting screen after title
 document.getElementById("start-btn").onclick = function () {
   document.getElementById("title-screen").style.display = "none";
-  const nicknameScreen = document.getElementById("nickname-screen");
   const greetingDiv = document.getElementById("greeting-message");
-  const greetingContinue = document.getElementById("greeting-continue-btn");
-  const nicknameTitle = document.getElementById("nickname-title");
-  const nicknameInput = document.getElementById("nickname-input");
 
   if (storedNickname) {
     // Show greeting, hide nickname screen
@@ -34,23 +30,23 @@ document.getElementById("start-btn").onclick = function () {
     // Show nickname input screen
     showScreen("nickname-screen");
   }
-
-  // Handle nickname submission
-  document.getElementById("nickname-submit-btn").onclick = function () {
-    const nickname = nicknameInput.value.trim();
-    if (!nickname) {
-      alert("Please enter your nickname!");
-      return;
-    }
-    localStorage.setItem("nickname", nickname);
-    greetingDiv.innerHTML = `Welcome, <b>${nickname}</b>!<br>`;
-    greetingDiv.appendChild(greetingContinue);
-    greetingDiv.style.display = "block";
-    greetingContinue.style.display = "inline-block";
-    nicknameScreen.style.display = "none";
-    // Proceed to next screen if you want, e.g. showScreen('mode-screen');
-  };
 };
+// Handle nickname submission
+document.getElementById("nickname-submit-btn").onclick = function () {
+  const nicknameInput = document.getElementById("nickname-input");
+  const greetingDiv = document.getElementById("greeting-message");
+  const nickname = nicknameInput.value.trim();
+  if (!nickname) {
+    alert("Please enter your nickname!");
+    return;
+  }
+  localStorage.setItem("nickname", nickname);
+  storedNickname = nickname;
+  showScreen("greeting-screen");
+  greetingDiv.innerHTML = `<b>Welcome, ${nickname}!</b><br>`;
+  // Proceed to next screen if you want, e.g. showScreen('mode-screen');
+};
+
 document.getElementById("leaderboard-btn").onclick = () => {
   showScreen("leaderboard-screen");
   showLeaderboard();
@@ -67,6 +63,9 @@ document.getElementById("end-leaderboard-btn").onclick = () => {
 // Handle nickname submission
 document.getElementById("greeting-continue-btn").onclick = () => {
   showTutorial();
+};
+document.getElementById("greeting-nickname-btn").onclick = () => {
+  showScreen("nickname-screen");
 };
 document.getElementById("easy-btn").onclick = () => {
   showDifficultyPopup("easy");
