@@ -1,20 +1,55 @@
 // --- Screen Switching Utility ---
 function showScreen(screenId) {
-  document.getElementById("title-screen").style.display = "none";
-  document.getElementById("nickname-screen").style.display = "none";
-  document.getElementById("mode-screen").style.display = "none";
-  document.getElementById("game-screen").style.display = "none";
-  document.getElementById("leaderboard-screen").style.display = "none";
-  document.getElementById("end-screen").style.display = "none";
-  document.getElementById("tutorial-screen").style.display = "none";
-  document.getElementById("loading-screen").style.display = "none";
-  document.getElementById(screenId).style.display = "block";
+  document.querySelectorAll(".screen").forEach((screen) => {
+    screen.style.display = "none";
+  });
+
+  const screen = document.getElementById(screenId);
+
+  if (screen.id === "greeting-screen") {
+    screen.style.display = "flex";
+  } else {
+    screen.style.display = "block";
+  }
 }
 
 // --- Button Event Listeners ---
-// Show nickname screen after title
-document.getElementById("start-btn").onclick = () =>
-  showScreen("nickname-screen");
+// Show nickname/greeting screen after title
+document.getElementById("start-btn").onclick = function () {
+  document.getElementById("title-screen").style.display = "none";
+  const storedNickname = localStorage.getItem("nickname");
+  const nicknameScreen = document.getElementById("nickname-screen");
+  const greetingDiv = document.getElementById("greeting-message");
+  const greetingContinue = document.getElementById("greeting-continue-btn");
+  const nicknameTitle = document.getElementById("nickname-title");
+  const nicknameInput = document.getElementById("nickname-input");
+
+  if (storedNickname) {
+    // Show greeting, hide nickname screen
+    showScreen("greeting-screen");
+    // Show the continue button
+    greetingDiv.innerHTML = `<b>Welcome back, ${storedNickname}!</b><br>`;
+  } else {
+    // Show nickname input screen
+    showScreen("nickname-screen");
+  }
+
+  // Handle nickname submission
+  document.getElementById("nickname-submit-btn").onclick = function () {
+    const nickname = nicknameInput.value.trim();
+    if (!nickname) {
+      alert("Please enter your nickname!");
+      return;
+    }
+    localStorage.setItem("nickname", nickname);
+    greetingDiv.innerHTML = `Welcome, <b>${nickname}</b>!<br>`;
+    greetingDiv.appendChild(greetingContinue);
+    greetingDiv.style.display = "block";
+    greetingContinue.style.display = "inline-block";
+    nicknameScreen.style.display = "none";
+    // Proceed to next screen if you want, e.g. showScreen('mode-screen');
+  };
+};
 document.getElementById("leaderboard-btn").onclick = () => {
   showScreen("leaderboard-screen");
   showLeaderboard();
@@ -29,13 +64,7 @@ document.getElementById("end-leaderboard-btn").onclick = () => {
 };
 
 // Handle nickname submission
-document.getElementById("nickname-submit-btn").onclick = () => {
-  const input = document.getElementById("nickname-input");
-  playerNickname = input.value.trim();
-  if (!playerNickname) {
-    alert("Please enter a nickname!");
-    return;
-  }
+document.getElementById("greeting-continue-btn").onclick = () => {
   showTutorial();
 };
 document.getElementById("easy-btn").onclick = () => {
