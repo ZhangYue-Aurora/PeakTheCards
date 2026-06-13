@@ -84,8 +84,23 @@ document.getElementById("back-to-title-btn").onclick = () =>
   showScreen("title-screen");
 document.getElementById("nickname-to-title-btn").onclick = () =>
   showScreen("title-screen");
-document.getElementById("back-to-mode-btn").onclick = () =>
+document.getElementById("back-to-mode-btn").onclick = () => {
+  gameOver = true;
+  gameResult = "0";
+  questionSequence.push(`BackToMode`);
+  sendGameData();
   showScreen("mode-screen");
+};
+
+// --- Replay Button Logic ---
+document.getElementById("replay-btn").onclick = () => {
+  gameOver = true;
+  gameResult = "0";
+  questionSequence.push(`ReplayGame`);
+  sendGameData();
+  startGame();
+};
+
 document.getElementById("back-to-mode-btn2").onclick = () =>
   showScreen("mode-screen");
 document.getElementById("end-mode-btn").onclick = () =>
@@ -3416,7 +3431,6 @@ const cluesDiv = document.getElementById("clues");
 const scoreDiv = document.getElementById("score");
 const timerDiv = document.getElementById("timer");
 const attemptsDiv = document.getElementById("attempts");
-const replayBtn = document.getElementById("replay-btn");
 
 // --- Helper: Add Questions to Available If Not Already There ---
 function addQuestionsToAvailable(unlocks) {
@@ -3668,9 +3682,6 @@ setInterval(updateTimer, 100);
 function updateAttempts() {
   attemptsDiv.textContent = `Attempts left: ${attempts} Click any card to take a guess!`;
 }
-
-// --- Replay Button Logic ---
-replayBtn.onclick = () => startGame();
 
 // --- Game Setup ---
 function startGame() {
