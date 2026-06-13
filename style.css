@@ -548,7 +548,7 @@ textarea {
 .suspect-card {
   width: 100%;
   max-width: 110px;
-  aspect-ratio: 11 / 14;
+  aspect-ratio: 20 / 27;
   border: none;
   background: transparent;
   cursor: pointer;
