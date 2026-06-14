@@ -1,4 +1,8 @@
+// --- Local Storage Shit ---
 let storedNickname = localStorage.getItem("nickname");
+
+// --- Pregame States ---
+let isReturningUser = false;
 
 // --- Screen Switching Utility ---
 function showScreen(screenId) {
@@ -22,11 +26,13 @@ document.getElementById("start-btn").onclick = function () {
   const greetingDiv = document.getElementById("greeting-message");
 
   if (storedNickname) {
+    isReturningUser = true;
     // Show greeting, hide nickname screen
     showScreen("greeting-screen");
     // Show the continue button
     greetingDiv.innerHTML = `<b>Welcome back, ${storedNickname}!</b><br>`;
   } else {
+    isReturningUser = false;
     // Show nickname input screen
     showScreen("nickname-screen");
   }
@@ -41,6 +47,7 @@ document.getElementById("nickname-submit-btn").onclick = function () {
     return;
   }
   localStorage.setItem("nickname", nickname);
+  isReturningUser = false;
   storedNickname = nickname;
   showScreen("greeting-screen");
   greetingDiv.innerHTML = `<b>Welcome, ${nickname}!</b><br>`;
@@ -62,7 +69,11 @@ document.getElementById("end-leaderboard-btn").onclick = () => {
 
 // Handle nickname submission
 document.getElementById("greeting-continue-btn").onclick = () => {
-  showTutorial();
+  if (isReturningUser) {
+    showScreen("mode-screen");
+  } else {
+    showTutorial();
+  }
 };
 document.getElementById("greeting-nickname-btn").onclick = () => {
   showScreen("nickname-screen");
