@@ -3783,7 +3783,7 @@ function sendGameData() {
   formData.append("difficulty", difficulty);
 
   fetch(
-    "https://script.google.com/macros/s/AKfycby_usngx_rt-2sXS29tMLsnBdP6LR2EDLY1pAcAQtk6DogQwdIwu9aEhmNK-p0AoJJW/exec",
+    "https://script.google.com/macros/s/AKfycbxd77alIH0iN8UqOhbQ7L7X0Q8hLk8Z16P6el1gkppCHI0k6U_-fJ4MuFOYGrC8_JFx/exec",
     {
       method: "POST",
       body: formData
@@ -3797,7 +3797,7 @@ function sendGameData() {
 // Fetch leaderboard data
 function fetchLeaderboard(callback) {
   fetch(
-    "https://script.google.com/macros/s/AKfycby_usngx_rt-2sXS29tMLsnBdP6LR2EDLY1pAcAQtk6DogQwdIwu9aEhmNK-p0AoJJW/exec"
+    "https://script.google.com/macros/s/AKfycbxd77alIH0iN8UqOhbQ7L7X0Q8hLk8Z16P6el1gkppCHI0k6U_-fJ4MuFOYGrC8_JFx/exec"
   )
     .then((res) => res.json())
     .then((data) => callback(data));
