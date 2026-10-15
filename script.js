@@ -2388,7 +2388,7 @@ function sendGameData() {
 function sendVisitorData() {
   const formData = new URLSearchParams();
 
-  formData.append("nickname", 'Visitor');
+  formData.append("visitor", 'Visitor');
 
   fetch("https://peakthecards.aurorazhang.workers.dev/", {
     method: "POST",
