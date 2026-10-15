@@ -3,3 +3,6 @@
 Created in Jan 2026,  
 at Imperial College London,  
 under the supervision of Dr Euan D Doidge.
+
+---
+Backend powered by Cloudflare and Google Apps Script.
