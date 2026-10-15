@@ -3,9 +3,14 @@
 
   <head>
     <meta charset="UTF-8">
+    <title>Peak the Cards</title>
+    
+    <meta charset="UTF-8" />
     <title>Peak the Cards!</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="./style.css">
-	<link rel="icon" type="image/png" href="images/favicon1.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="images/favicon1.png" />
+<link rel="stylesheet" href="./style.css">
+
   </head>
     
   <body>
@@ -24,10 +29,11 @@
 </div>
 
 <!-- Nickname Screen -->
-<div id="nickname-screen" class="screen" style="display:none;">
+<div id="nickname-screen" class="screen" style="display: none">
   <h2>Enter Your Nickname</h2>
-  <input id="nickname-input" type="text" maxlength="20" placeholder="Your nickname" style="font-size:16px; padding:8px;">
-  <br><br>
+  <input id="nickname-input" type="text" maxlength="20" placeholder="Your nickname" style="font-size: 16px; padding: 8px" />
+  <br />
+  <br />
   <div class="nickname-buttons">
     <button id="nickname-submit-btn">Continue</button>
     <button id="nickname-to-title-btn">Back</button>
@@ -38,17 +44,17 @@
 <div id="greeting-screen" class="screen">
   <div id="greeting-message"></div>
   <div class="greeting-buttons">
-	<button id="greeting-nickname-btn">New nickname?</button>
+    <button id="greeting-nickname-btn">New nickname?</button>
     <button id="greeting-continue-btn">Continue</button>
   </div>
 </div>
 
 <!-- Tutorial Screen -->
-<div id="tutorial-screen" class="screen" style="display:none;">
+<div id="tutorial-screen" class="screen" style="display: none">
   <h2>How To Play</h2>
 
   <div class="tutorial-content">
-    <img id="tutorial-image" src="" alt="Tutorial Step">
+    <img id="tutorial-image" src="" alt="Tutorial Step" />
   </div>
 
   <div class="tutorial-nav">
@@ -61,7 +67,7 @@
 </div>
 
 <!-- Mode Selection Screen -->
-<div id="mode-screen" class="screen" style="display:none;">
+<div id="mode-screen" class="screen" style="display: none">
   <img src="images/title.png" alt="Peak the Cards!" id="mode-image" />
   <div class="mode-buttons">
     <button id="tutorial-btn">Tutorial</button>
@@ -75,9 +81,8 @@
 </div>
 
 <!-- Main Game Screen -->
-<div id="game-screen" class="screen" style="display:none;">
+<div id="game-screen" class="screen" style="display: none">
   <div class="game-layout">
-
     <!-- LEFT SIDE: suspects + attempts + clues -->
     <div class="left-panel">
       <div id="suspects-grid"></div>
@@ -109,7 +114,7 @@
 </div>
 
 <!-- Leaderboard Screen -->
-<div id="leaderboard-screen" class="screen" style="display:none;">
+<div id="leaderboard-screen" class="screen" style="display: none">
   <h2>✨Top 10 Players✨</h2>
 
   <div class="leaderboard-nav">
@@ -120,11 +125,11 @@
 
   <div id="leaderboard"></div>
 
-  <button id="back-to-mode-btn2">Back</button>
+  <button id="leaderboard-to-mode-btn">Back</button>
 </div>
 
 <!-- End Screen -->
-<div id="end-screen" class="screen" style="display:none;">
+<div id="end-screen" class="screen" style="display: none">
   <h2>Round Finished</h2>
   <div class="end-result-box">
     <div id="end-stars"></div>
@@ -141,9 +146,9 @@
     <button id="end-mode-btn">Mode Selection</button>
   </div>
 </div>
-<script src="./script.js"></script>
 
-<div id="difficulty-popup" class="difficulty-popup" style="display:none;">
+<!-- Difficulty Popup -->
+<div id="difficulty-popup" class="difficulty-popup" style="display: none">
   <div class="difficulty-popup-content">
     <h3 id="popup-title"></h3>
     <div id="popup-requirements"></div>
@@ -154,7 +159,6 @@
     </div>
   </div>
 </div>
-<script src="./script.js"></script>
     <script  src="./script.js"></script>
 
   </body>

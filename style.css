@@ -1,8 +1,29 @@
 @font-face {
   font-family: "MyFont";
-  src: url("fonts/Aerodynamic.otf") format("opentype");
-  font-weight: normal;
+  src: url("fonts/OregonLdoBold.ttf") format("truetype");
+  font-weight: 400;
   font-style: normal;
+}
+
+@font-face {
+  font-family: "MyFont";
+  src: url("fonts/OregonLdoExtraBlack.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MyFont";
+  src: url("fonts/OregonLdoBoldOblique.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "MyFont";
+  src: url("fonts/OregonLdoExtraBlackOblique.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
 }
 
 body {
@@ -13,7 +34,7 @@ button,
 input,
 select,
 textarea {
-    font-family: inherit;
+  font-family: inherit;
 }
 /* Disables all screens */
 .screen {
@@ -34,8 +55,7 @@ textarea {
   border-radius: 12px;
   box-shadow: 0 0 10px #8bb6da;
   box-sizing: border-box;
-  font-family: "MyFont",
-    sans-serif;
+  font-family: "MyFont", sans-serif;
 }
 
 .loading-spinner {
@@ -78,9 +98,8 @@ textarea {
   border-radius: 12px;
   box-shadow: 0 0 10px #8bb6da;
   box-sizing: border-box;
-  font-family: "MyFont",
-    sans-serif;
-	color: #2a6fb8;
+  font-family: "MyFont", sans-serif;
+  color: #2a6fb8;
 }
 .title-buttons {
   display: flex;
@@ -134,8 +153,7 @@ textarea {
   border-radius: 12px;
   box-shadow: 0 0 10px #8bb6da;
   box-sizing: border-box;
-  font-family: "MyFont",
-    sans-serif;
+  font-family: "MyFont", sans-serif;
 }
 .nickname-buttons {
   display: flex;
@@ -201,8 +219,7 @@ textarea {
   border-radius: 12px;
   box-shadow: 0 0 10px #8bb6da;
   box-sizing: border-box;
-  font-family: "MyFont",
-    sans-serif;
+  font-family: "MyFont", sans-serif;
 }
 #greeting-message {
   color: #2a6fb8;
@@ -248,8 +265,7 @@ textarea {
   border-radius: 12px;
   box-shadow: 0 0 10px #8bb6da;
   box-sizing: border-box;
-  font-family: "MyFont",
-    sans-serif;
+  font-family: "MyFont", sans-serif;
 }
 .mode-buttons {
   display: flex;
@@ -259,6 +275,7 @@ textarea {
 }
 .mode-buttons button {
   font-size: 16px;
+  color: #2a6fb8;
   padding: 10px 18px;
   border-radius: 8px;
   border: 2px solid #2a6fb8;
@@ -278,6 +295,7 @@ textarea {
 }
 #easy-btn {
   background: #a0dec9;
+  color: #064a49;
   border-color: #66aaa9;
 }
 #easy-btn:hover {
@@ -286,6 +304,7 @@ textarea {
 
 #normal-btn {
   background: #8cbfe5;
+  color: #0f3a6e; 
   border-color: #6f9ace;
 }
 #normal-btn:hover {
@@ -294,6 +313,7 @@ textarea {
 
 #hard-btn {
   background: #b2bfe5;
+  color: #232a5e;
   border-color: #939ace;
 }
 #hard-btn:hover {
@@ -302,6 +322,7 @@ textarea {
 
 #expert-btn {
   background: #d7a0cf;
+  color: #691d5e;
   border-color: #b96dae;
 }
 #expert-btn:hover {
@@ -333,8 +354,7 @@ textarea {
   border-radius: 12px;
   box-shadow: 0 0 10px #8bb6da;
   box-sizing: border-box;
-  font-family: "MyFont",
-    sans-serif;
+  font-family: "MyFont", sans-serif;
 }
 
 #leaderboard-screen h2 {
@@ -382,7 +402,7 @@ textarea {
   border-bottom: none;
 }
 
-#back-to-mode-btn2 {
+#leaderboard-to-mode-btn {
   font-size: 16px;
   padding: 10px 18px;
   border-radius: 8px;
@@ -397,7 +417,7 @@ textarea {
   color: #2a6fb8;
 }
 
-#back-to-mode-btn2:hover {
+#leaderboard-to-mode-btn:hover {
   background: #e0f1ff;
   transform: translateY(-1px);
 }
@@ -413,9 +433,8 @@ textarea {
   border-radius: 12px;
   box-shadow: 0 0 10px #8bb6da;
   box-sizing: border-box;
-  font-family: "MyFont",
-    sans-serif;
-	color: #2a6fb8;
+  font-family: "MyFont", sans-serif;
+  color: #2a6fb8;
 }
 
 .tutorial-content {
@@ -491,7 +510,7 @@ textarea {
 
 #game-screen {
   min-width: 390px;
-  max-width: 1000px;
+  max-width: 1500px;
   min-height: 600px;
   margin: 20px auto;
   padding: 20px;
@@ -499,8 +518,7 @@ textarea {
   border-radius: 12px;
   box-shadow: 0 0 10px #8bb6da;
   box-sizing: border-box;
-  font-family: "MyFont",
-    sans-serif;
+  font-family: "MyFont", sans-serif;
 }
 
 /* Two-column main layout */
@@ -532,23 +550,32 @@ textarea {
 /* 2 rows × 4 columns suspect grid */
 #suspects-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));/**/
   gap: 8px;
 }
 
 /* wrapper */
 .suspect-card-wrapper {
+  /*outline: 2px solid red;*/
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  /*justify-content:flex-start;*/
+  gap: 6px;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 /* card button */
 .suspect-card {
+  /*outline: 2px solid lime;*/
+  display: block;
   width: 100%;
   max-width: 110px;
   aspect-ratio: 20 / 27;
+  box-sizing: border-box;
+  margin: 0;
   border: none;
   background: transparent;
   cursor: pointer;
@@ -610,15 +637,65 @@ textarea {
 
 /* Checkbox */
 .suspect-checkbox {
-  transform: scale(1.2);
+  /*outline: 2px solid blue;*/  
+  
+  font-size: 16px;
+  color: #2a6fb8;
+  border-radius: 4px;
+  border: 3px solid #2a6fb8;
+  background: #ffffff;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+  height: 24px;
+  width: 40px;
+  box-sizing: border-box;
+  padding: 0;
+  font-weight: 500;
+  letter-spacing: 1px;
+  
+  /*alignment fix*/
+  display:flex;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  
+}
+.suspect-checkbox:hover:not(:disabled) {
+  background: #e0f1ff;
+  transform: translateY(-1px);
+}
+.suspect-checkbox:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.suspect-card-wrapper>.suspect-checkbox{
+	position: relative;
+	left: 0;
+	transform: none;
+	width: 40px;
+	margin-left: 0;
+	margin-right: 0;
+	align-self: center;
+	box-sizing: border-box;
 }
 
+.suspect-card-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+/*
+.suspect-checkbox {
+  transform: scale(1.2);
+}
+*/
 /* Disable checkbox visually */
-.suspect-checkbox:disabled {
+/*.suspect-checkbox:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
-
+*/
 /* Shake animation */
 @keyframes shake {
   0% {
@@ -704,10 +781,13 @@ textarea {
   flex-direction: column;
   gap: 8px;
 }
-.question-btn {
-  display: block;
+.question-card {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   width: 100%;
-  margin: 0;
+  margin: 4px 0;
   padding: 10px 12px;
   text-align: left;
 
@@ -716,51 +796,113 @@ textarea {
   border-radius: 10px;
   border: 3px solid #2a6fb8;
   font-size: 16px;
-  cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
-.question-btn:hover {
+.question-card:hover {
   background: #67a2dd;
   transform: translateY(-1px);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
-/* your existing “state” classes can still be used */
 
 /* your existing “state” classes can still be used */
-.question-btn.greyed {
+.question-card.greyed {
   background: #bbb;
   color: #444;
   cursor: default;
   box-shadow: none;
 }
-.question-btn.primary {
+.question-card.primary {
   background: #b2bfe5;
   border-color: #939ace;
   font-weight: bold;
 }
-.question-btn.primary:hover {
+.question-card.primary:hover {
   background: #939ace;
   transform: translateY(-1px);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
-.question-btn.secondary {
+.question-card.secondary {
   background: #8cbfe5;
   border-color: #6f9ace;
   font-style: italic;
 }
-.question-btn.secondary:hover {
+.question-card.secondary:hover {
   background: #6f9ace;
   transform: translateY(-1px);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
-.question-btn.tertiary {
+.question-card.tertiary {
   background: #a0dec9;
   border-color: #66aaa9;
 }
-.question-btn.tertiary:hover {
+.question-card.tertiary:hover {
   background: #66aaa9;
   transform: translateY(-1px);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/*input & button inside question cards */
+.question-card button {
+  margin-left: auto;
+  font-size: 16px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 2px solid #2a6fb8;
+  background: #ffffff;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+  color: #2a6fb8;
+  font-weight: 700;
+}
+.question-card button:hover {
+  background: #e0f1ff;
+  transform: translateY(-1px);
+}
+
+.question-card select {
+  box-sizing: border-box;
+  padding: 6px 6px;
+  font-size: 16px;
+  width: 40px;
+  text-align: center;
+
+  background: #ffffff;
+  cursor: pointer;
+  color: #2a6fb8;
+
+  border-radius: 8px;
+  border: 2px solid #2a6fb8;
+
+  outline: none;
+  transition: 0.15s ease;
+}
+.question-card input {
+  box-sizing: border-box;
+  padding: 6px 4px;
+  font-size: 16px;
+  width: 40px;
+  text-align: center;
+
+  background: #ffffff;
+  cursor: pointer;
+  color: #2a6fb8;
+
+  border-radius: 8px;
+  border: 2px solid #2a6fb8;
+
+  outline: none;
+  transition: 0.15s ease;
+}
+
+.question-card select:hover,
+.question-card input:hover {
+  background: #e0f1ff;
+}
+
+.question-card select:focus,
+.question-card input:focus {
+  border-color: #183e70;
+  box-shadow: 0 0 0 3px rgba(42, 111, 184, 0.3);
 }
 
 /* Bottom controls */
