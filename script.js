@@ -22,6 +22,8 @@ function showScreen(screenId) {
 // window event listener: preload all images on page load
 window.addEventListener("load", async () => {
   // Show loading screen first
+  document.getElementById("title-screen").style.display = "none";  
+  document.getElementById("greeting-screen").style.display = "none";
   showScreen("loading-screen");
 
   // Preload everything
@@ -29,6 +31,7 @@ window.addEventListener("load", async () => {
 
   // After everything is cached, show mode selection
   showScreen("title-screen");
+  sendVisitorData();
 });
 
 //
@@ -2352,6 +2355,40 @@ function sendGameData() {
   formData.append("attempts_used", attemptsUsed);
   formData.append("stars", starsEarned);
   formData.append("difficulty", difficulty);
+
+  fetch("https://peakthecards.aurorazhang.workers.dev/", {
+    method: "POST",
+    body: formData
+  })
+    .then(async (res) => {
+      const text = await res.text();
+
+      try {
+        // Try to parse JSON normally
+        return JSON.parse(text);
+      } catch (err) {
+        // If JSON parsing fails, log the raw HTML/text
+        console.error("Non‑JSON response received:");
+        console.error(text);
+
+        throw new Error("Server returned non‑JSON response");
+      }
+    }) // ← back to JSON
+    .then((data) => {
+      console.log("Response:", data);
+    })
+    .catch((err) => {
+      console.error("Send error:", err);
+      console.error(String(err));
+      console.error("Error name:", err.name);
+      console.error("Error message:", err.message);
+    });
+}
+
+function sendVisitorData() {
+  const formData = new URLSearchParams();
+
+  formData.append("nickname", 'Visitor');
 
   fetch("https://peakthecards.aurorazhang.workers.dev/", {
     method: "POST",
