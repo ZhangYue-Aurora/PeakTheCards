@@ -1632,22 +1632,22 @@ const operators = {
 // --- different difficulty requirements
 const starRequirements = {
   1: {
-    maxTime: 180, // 3 minutes
+    maxTime: 90, // 1.5 minutes
     maxQuestions: 3,
     attempts: 3
   },
   2: {
-    maxTime: 240, // 4 minutes
+    maxTime: 120, // 2 minutes
     maxQuestions: 4,
     attempts: 2
   },
   3: {
-    maxTime: 300, // 5 minutes
+    maxTime: 150, // 2.5 minutes
     maxQuestions: 5,
     attempts: 2
   },
   4: {
-    maxTime: 360, // 6 minutes
+    maxTime: 180, // 6 minutes
     maxQuestions: 6,
     attempts: 1
   }
@@ -2531,14 +2531,15 @@ function showDifficultyPopup(selectedDifficulty) {
   const settings = starRequirements[selectedDifficulty];
 
   const minutes = settings.maxTime / 60;
+  const seconds = settings.maxTime;
   document.getElementById("popup-title").textContent =
     difficultyOrder[selectedDifficulty].toUpperCase() +
     " Mode - Goals to 3 Star";
   document.getElementById("popup-requirements").innerHTML = `
     ⭐ Correctly identify the molecule<br>
-    ⭐ Finish under <b>${minutes} minutes</b><br>
+    ⭐ Finish under <b>${seconds} seconds</b><br>
     ⭐ Ask no more than <b>${settings.maxQuestions} questions</b><br>
-    you have <b>${settings.attempts} attempt(s)</b>!
+    you have <b>${settings.attempts} attempt${settings.attempts === 1 ? '' : 's'}</b>!
   `;
 
   document.getElementById("difficulty-popup").style.display = "flex";
