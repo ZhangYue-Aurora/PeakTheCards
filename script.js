@@ -2622,12 +2622,22 @@ function getAllGameImages() {
     }
   });
 
+  // title
+  paths.push("images/title.png");
+	
   // Card backs
   paths.push("images/card-back-easy.png");
   paths.push("images/card-back-normal.png");
   paths.push("images/card-back-hard.png");
   paths.push("images/card-back-expert.png");
 
+  // tutorials
+  paths.push("images/tutorial-1.png");
+  paths.push("images/tutorial-2.png");
+  paths.push("images/tutorial-3.png");
+  paths.push("images/tutorial-4.png");
+  paths.push("images/tutorial-5.png");
+	
   return paths.filter(Boolean);
 }
 
