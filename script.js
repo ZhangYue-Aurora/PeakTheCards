@@ -2248,8 +2248,18 @@ function updateTimer() {
     !gameOver &&
     document.getElementById("game-screen").style.display === "block"
   ) {
-    let elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
-    timerDiv.textContent = `Timer: ${elapsed} s`;
+    let elapsed = Math.round((Date.now() - startTime) / 1000);
+	
+	//const colour = elapsed < 10/*starRequirements[difficulty].maxTime*/ ? "#366FAF" : "#853434";
+	
+	/*timerDiv.innerHTML = 
+	'Timer: '<span style ="color: ${colour}">${elapsed}' / '${starRequirements[difficulty].maxTime}' s'<span>;*/
+    timerDiv.textContent = `Timer: ${elapsed} / ${starRequirements[difficulty].maxTime} s`;
+	// compare time against star requirements
+	if (elapsed < /*10*/starRequirements[difficulty].maxTime) {
+		timerDiv.style.color = "#366FAF";
+	} else {
+	timerDiv.style.color = "#DD5656";}
   }
 }
 setInterval(updateTimer, 100);
